@@ -1,4 +1,4 @@
-import type { Link } from "../types/Link";
+import type { Link } from "../types/Links";
 
 interface LinkCardProps {
   link: Link;

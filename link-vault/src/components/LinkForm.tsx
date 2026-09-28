@@ -1,7 +1,7 @@
 import { useState } from "react";
 import type { FormEvent } from "react";
 
-import type { Link } from "../types/Link";
+import type { Link } from "../types/Links";
 
 interface LinkFormProps {
   mode: "add" | "edit";

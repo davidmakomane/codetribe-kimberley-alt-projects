@@ -7,7 +7,7 @@ import LinkCard from "./components/LinkCard";
 import Modal from "./components/Modal";
 import LinkForm from "./components/LinkForm";
 
-import type { Link } from "./types/Link";
+import type { Link } from "./types/Links";
 
 function App() {
   const STORAGE_KEY = "link-vault-links";
