@@ -1,51 +1,424 @@
-Topic: React TS
-Submission Date: 23 September 2026
-Time: 09:00 am
+# JobTrack – React TypeScript Job Application Tracker
 
-Please submit by pushing to your github repository and creating a pull request to your mentor
+## Project Overview
 
-Title: ReactTS UI Challenge
+JobTrack is a responsive job application tracking web application built with React, TypeScript and React Router.
 
-Objective
-The objective of this task is to assess your understanding of ReactTS concepts and your ability to design and implement user interfaces (UI) using ReactTS components. In this challenge, you will be creating your own UI component from scratch, demonstrating your knowledge of React best practices, component structure, and reusability.
+The application helps users keep track of jobs they have applied for, including the company, role, application date, status, location, salary, duties, requirements and contact information.
 
-This is the official first task of the curriculum, based on React Lesson 2, focusing mainly on design implementation, styling and screen responsiveness.
+This project was developed as part of the React TypeScript curriculum and demonstrates React components, state management, forms, routing, URL queries, CRUD operations, validation and responsive UI design.
 
-Choose one of the designs in the folder and implement the UI exactly as it is.
+---
 
-Instructions:
-Create a vite ReactTS project in the directory
-Choose one of the files (design), delete the rest. (your repo should the design you have chosen).
-Using ReactTS, create a front-end implementation of the UI design.
-Pay close attention to the layout, colours, typography, and overall visual elements to ensure accurate replication.
-You may use your own icons, images, and typography that closely resemble those used in the UI design.
-Use appropriate ReactTS components and styling techniques to achieve the desired design.
-Implement interactivity and responsiveness (from mobile to desktop) where applicable.
-Test your implementation thoroughly to ensure proper functionality.
-Make sure all reappearing code is set up as reusable components to ensure readability and maintainability
-Host your work using Github pages , firebase or any hosting site of your choice.
+## Features
 
-Notes: 
-While replicating the design, focus on visual fidelity and user experience.
-Use your creativity to find icons, images, typography and colors (color codes) that closely resemble those used in the UI design.
-Apply your knowledge of ReactTS and front-end development best practices to accomplish the task.
-Make use of reusable components wherever possible.
-Feel free to use any additional libraries or tools that you are comfortable with.
-Be attentive to details and strive for accuracy in your implementation.
-Remember, the purpose of this task is to assess your ability to translate a design into a functional UI using ReactTS. If you have any questions or need clarification, please don't hesitate to reach out.
-Stick to plain CSS for styling
+### Landing Page
 
-Evaluation Criteria:
-Accuracy of the design
-Was the design layout properly imitated
-Were the same colors maintained
-Were similar fonts to those in the design used
-Were all elements  imitated, is there an element on the design that’s missing on the implementation
-Page interactivity
-Do links change color when hovered over
-Do buttons change color when hovered over
-Utilisation of ReactTS features
-Did developer create own components
-Were developer-created components re-used for similar UI elements
-Responsiveness of the page
-Is the page responsive to different web view sizes
+- Introduces the JobTrack application.
+- Explains the purpose of the application.
+- Provides links to registration and login.
+- Responsive navigation.
+
+### Registration
+
+- Username field.
+- Password field.
+- Confirm password field.
+- Basic form validation.
+- Stores the username for the current prototype.
+
+### Login
+
+- Username and password fields.
+- Login validation.
+- Redirects users to the dashboard after login.
+- Uses protected routes for dashboard pages.
+
+### Dashboard
+
+Users can:
+
+- View job applications.
+- Add new job applications.
+- Search by company or role.
+- Filter applications by status.
+- Sort applications by date.
+- View application statistics.
+- Open detailed job information.
+- Delete job applications.
+
+### Job Status
+
+Applications can have one of three statuses:
+
+- Applied
+- Interviewed
+- Rejected
+
+Each status has a different visual style.
+
+### Job Details
+
+Each application contains:
+
+- Company name
+- Job role
+- Application status
+- Date applied
+- Location
+- Address
+- Salary
+- Contact information
+- Job duties
+- Job requirements
+
+### Edit and Update
+
+Users can edit an existing job application and save the updated information.
+
+### Search, Filter and Sort
+
+The dashboard supports:
+
+- Search by company name.
+- Search by job role.
+- Filter by application status.
+- Sort from newest to oldest.
+- Sort from oldest to newest.
+
+Search, filtering and sorting options are reflected in the URL using query parameters.
+
+---
+
+## Technologies Used
+
+- React
+- TypeScript
+- React Router
+- Vite
+- JSON Server
+- HTML5
+- CSS3
+- Fetch API
+- Git
+- GitHub
+
+---
+
+## Project Structure
+
+```text
+job-tracker/
+│
+├── public/
+│
+├── src/
+│   ├── components/
+│   │   ├── EditJobForm.tsx
+│   │   ├── JobCard.tsx
+│   │   ├── JobForm.tsx
+│   │   ├── Navbar.tsx
+│   │   └── ProtectedRoute.tsx
+│   │
+│   ├── pages/
+│   │   ├── Landing.tsx
+│   │   ├── Login.tsx
+│   │   ├── Register.tsx
+│   │   ├── Home.tsx
+│   │   ├── JobDetails.tsx
+│   │   └── NotFound.tsx
+│   │
+│   ├── App.tsx
+│   ├── main.tsx
+│   └── index.css
+│
+├── db.json
+├── index.html
+├── package.json
+├── package-lock.json
+├── tsconfig.json
+├── vite.config.ts
+└── README.md
+```
+
+---
+
+## Application Routes
+
+| Route | Page | Purpose |
+|---|---|---|
+| `/` | Landing | Introduces JobTrack |
+| `/login` | Login | User login |
+| `/register` | Registration | Create an account |
+| `/home` | Dashboard | Manage job applications |
+| `/jobs/:id` | Job Details | View, edit and delete a job |
+| `*` | 404 | Handles unknown routes |
+
+---
+
+## URL Query Parameters
+
+### Search
+
+```text
+/home?search=developer
+```
+
+Searches company names and job roles.
+
+### Status
+
+```text
+/home?status=Interviewed
+```
+
+Displays applications with the selected status.
+
+### Sorting
+
+```text
+/home?sort=asc
+```
+
+Displays applications from oldest to newest.
+
+```text
+/home?sort=desc
+```
+
+Displays applications from newest to oldest.
+
+---
+
+## CRUD Operations
+
+JobTrack uses JSON Server as a local REST API.
+
+### Create
+
+New applications are added using:
+
+```text
+POST /jobs
+```
+
+### Read
+
+All applications are retrieved using:
+
+```text
+GET /jobs
+```
+
+Individual applications are retrieved using:
+
+```text
+GET /jobs/:id
+```
+
+### Update
+
+Existing applications are updated using:
+
+```text
+PUT /jobs/:id
+```
+
+### Delete
+
+Applications are removed using:
+
+```text
+DELETE /jobs/:id
+```
+
+---
+
+## JSON Server
+
+The project uses `db.json` as the local database.
+
+The JSON Server API runs on:
+
+```text
+http://localhost:3001
+```
+
+The jobs endpoint is:
+
+```text
+http://localhost:3001/jobs
+```
+
+---
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/davidmakomane/job-tracker.git
+```
+
+Move into the project:
+
+```bash
+cd job-tracker
+```
+
+Install the dependencies:
+
+```bash
+npm install
+```
+
+---
+
+## Running the Application
+
+The application requires two development servers.
+
+### 1. Start JSON Server
+
+```bash
+npm run server
+```
+
+JSON Server will run on:
+
+```text
+http://localhost:3001
+```
+
+### 2. Start React
+
+Open another terminal and run:
+
+```bash
+npm run dev
+```
+
+The React application will normally run on:
+
+```text
+http://localhost:5173
+```
+
+---
+
+## Responsive Design
+
+JobTrack is designed to work across different screen sizes:
+
+- 320px
+- 480px
+- 768px
+- 1024px
+- 1200px
+
+The layout adapts navigation, forms, dashboard cards and job cards for smaller screens.
+
+---
+
+## Component Structure
+
+### Navbar
+
+Handles application navigation and logout.
+
+### JobCard
+
+Displays an individual job application and provides actions for viewing and deleting the application.
+
+### JobForm
+
+Provides the form for creating a new job application.
+
+### EditJobForm
+
+Provides the form for updating an existing job application.
+
+### ProtectedRoute
+
+Protects dashboard and job-detail routes from unauthorised access.
+
+---
+
+## React Concepts Demonstrated
+
+This project demonstrates:
+
+- Functional components
+- TypeScript interfaces
+- Props
+- State
+- `useState`
+- `useEffect`
+- React Router
+- `BrowserRouter`
+- `Routes`
+- `Route`
+- `Link`
+- `NavLink`
+- `useNavigate`
+- `useParams`
+- `useSearchParams`
+- Protected routes
+- Forms
+- Form validation
+- Arrays and array methods
+- Objects
+- Fetch API
+- REST API requests
+- CRUD operations
+- Conditional rendering
+- Responsive CSS
+- Reusable components
+
+---
+
+## Design
+
+The application is based on the JobTrack wireframe created for the project.
+
+The original layout and navigation structure were retained while the visual theme was adapted to a green colour scheme.
+
+The main design goals are:
+
+- Simple navigation
+- Clear job status indicators
+- Easy access to job information
+- Responsive layouts
+- Clear action buttons
+- Consistent spacing and typography
+- User-friendly forms
+
+---
+
+## Future Improvements
+
+Planned improvements include:
+
+- Improved job details layout.
+- Enhanced edit/update interface.
+- More complete authentication.
+- User-specific job applications.
+- Improved validation and error handling.
+- Further responsive design improvements.
+- Additional UI polishing based on the original wireframe.
+- Interview reminders.
+- Application analytics.
+- Exporting job applications.
+- Cloud database integration.
+
+---
+
+## Author
+
+**Letsego David Makomane**
+
+React TypeScript Job Application Tracker
+
+GitHub:
+
+https://github.com/davidmakomane/job-tracker

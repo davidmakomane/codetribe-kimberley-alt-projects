@@ -1,0 +1,44 @@
+{
+  "jobs": [
+    {
+      "id": "1",
+      "company": "Tech Solutions SA",
+      "role": "Junior Software Developer",
+      "status": "Applied",
+      "dateApplied": "2026-09-20",
+      "duties": "Develop and maintain web applications, fix bugs and work with the development team.",
+      "location": "Kimberley",
+      "salary": "R10 000/month",
+      "address": "Kimberley Business Park",
+      "contact": "hr@techsolutions.co.za",
+      "requirements": "Diploma in IT, basic React and TypeScript knowledge."
+    },
+    {
+      "id": "2",
+      "company": "Northern Cape IT Services",
+      "role": "IT Support Intern",
+      "status": "Interviewed",
+      "dateApplied": "2026-09-15",
+      "duties": "Provide first-line technical support, troubleshoot hardware and software issues.",
+      "location": "Kimberley",
+      "salary": "R5 000/month",
+      "address": "De Beers Road, Kimberley",
+      "contact": "careers@ncapetech.co.za",
+      "requirements": "IT qualification, troubleshooting skills and communication skills."
+    },
+    {
+      "id": "3",
+      "company": "Digital Systems",
+      "role": "Junior Network Technician",
+      "status": "Rejected",
+      "dateApplied": "2026-09-10",
+      "duties": "Assist with network monitoring, configuration and troubleshooting.",
+      "location": "Bloemfontein",
+      "salary": "R8 500/month",
+      "address": "Central Business District, Bloemfontein",
+      "contact": "jobs@digitalsystems.co.za",
+      "requirements": "Networking fundamentals, TCP/IP knowledge and troubleshooting skills."
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
