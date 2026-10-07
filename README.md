@@ -1,175 +1,424 @@
-Topic: ReactTS <br />
-Submission Date: 07 October 2025 <br />
-Time: 09:00 <br /> <br />
+# JobTrack – React TypeScript Job Application Tracker
 
-Please submit by pushing to your GitHub repository and submitting the submission form
+## Project Overview
 
-# Title: Task 3 - ReactTS Job Application Tracker 
+JobTrack is a responsive job application tracking web application built with React, TypeScript and React Router.
 
-## Objective
-The objective of this task is to assess your understanding of React navigation, routing, URL queries and URL parameters, while testing your research skills when it comes to finding out ways to use new technology.
+The application helps users keep track of jobs they have applied for, including the company, role, application date, status, location, salary, duties, requirements and contact information.
 
-<strong>This is the third official task for React based on Lesson 3.</strong>
- 
-<strong>Scenario</strong>: You are tasked with building a simple (MVP) of a web application that allows job applicants to track the number of jobs they’ve applied for, which will help them assess how many applications are successful, pending and rejected. (You can extend the app in your free time to add more functionality such as an actual database, as this is only a mock application).
+This project was developed as part of the React TypeScript curriculum and demonstrates React components, state management, forms, routing, URL queries, CRUD operations, validation and responsive UI design.
 
+---
 
-## Requirements
+## Features
 
-### Interface
-<ol>
-  <li>Create a user-friendly interface that is intuitive and easy to use</li>
-  <li>The interface should be responsive to different screens</li>
-  <li>Interface should make use of aesthetically pleasing color combinations</li>
-  <li>The interface should have a good layout that is easy to navigate</li>
-  <li>
-    Pages
-    <ul>
-      <li>Six Pages: Login, Registration, Home, landing, more details page (job page), 404 page</li>
-      <li>
-        Registration Page: New users can register with the following details:
-        <ul>
-          <li>Username</li>
-          <li>Password</li>
-        </ul>
-      </li>
-      <li>Login Page: Users can log in with their credentials.</li>
-      <li>Home Page: Display Jobs you applied for</li>
-      <li>Landing Page: Displays details about the purpose of the web application. You can be creative in terms of the other details to include
-      </li>
-      <li>
-        Job Page: This page can be used to display more details about the job and the company, such as address, contact details, duties, requirements, and any data applicants could find relevant to know about the company for interview purposes. You can use your creativity to see what details you want users to optionally add, bear in mind to include all necessary inputs.</li>
-      <li>404 page: Catch all non-existent paths</li>
-    </ul>
-  </li>
-</ol> 
+### Landing Page
 
+- Introduces the JobTrack application.
+- Explains the purpose of the application.
+- Provides links to registration and login.
+- Responsive navigation.
 
-### Functionality: 
-1. Add Function: Users can add new jobs to the Job Application Tracker with the following details:
-   <ul>
-     <li>Company name</li>
-     <li>Role</li>
-     <li>Status: Applied, Interviewed, Rejected</li>
-     <li>Date applied</li>
-     <li>Job duties</li>
-   </ul>
-3. Delete Function: Users can delete existing Jobs from the job-application-tracker.
-4. Update Function: Users can edit existing jobs on the job-application tracker.
-5. Search Function: Users can search for items by company or role. The searched item should reflect on the URL bar
-6. Status colors: use colours to represent status (e.g., Red for Rejected, Yellow for Applied, Green for Interviewed).
-7. Filter function: Users can filter the jobs according to job status. The filter should reflect on the URL bar
-8. Sort function: Users can sort by date. Descending and ascending. This should reflect on the URL bar
+### Registration
 
+- Username field.
+- Password field.
+- Confirm password field.
+- Basic form validation.
+- Stores the username for the current prototype.
 
-### General Requirements:
-1. Use the previous design (color scheme, design style, and properties) to formulate a new design for the application
-2. Implement CRUD (Create, Read, Update, Delete) operations to meet the functional requirements of the application
-3. Use <a target="blank" href="https://www.npmjs.com/package/json-server">JSON server</a> to store the link details
-4. Ensure the application is responsive and user-friendly
-5. Implement user authentication and authorization to protect user data
-6. Make sure to use queries and parameters in your application, allowing users to interact with the application from the URL bar while ensuring predictable results when the URL is updated.
-7. Use proper validation for input fields to prevent errors.
-8. Use protected routing in relevant routes/paths
+### Login
 
-### Persistence
-1. Make use of JSON server to store the link details
- 
-### Concepts the task covers
-1. Arrays and array methods
-2. Objects and object method
-3. React components
-4. React state
-5. React props
-6. React hooks
-7. JSON object and its methods
-8. Web page responsiveness
-9. Form validation
-10. Design principles
-11. React router navigation
-12. Git principles
-    <ul>
-      <li>Git cloning</li>
-      <li>Git branching</li>
-      <li>Pull requests</li>
-    </ul>
+- Username and password fields.
+- Login validation.
+- Redirects users to the dashboard after login.
+- Uses protected routes for dashboard pages.
 
-### Resources
-1. <a target="blank" href="https://www.npmjs.com/package/json-server">JSON server</a>
-2. <a target="blank" href="https://reactrouter.com/">React Router</a>
-3. <a target="blank" href="https://react.dev">React</a>
-4. <a target="blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Flexible_box_layout/Basic_concepts">Mozilla Developer: Flexbox basics</a>
-5. <a target="blank" href="https://css-tricks.com/complete-guide-css-grid-layout/">CSS Tricks: CSS Grid Layout</a>
-6. <a target="blank" href="https://www.w3schools.com/git/">W3Schools: Git</a>
+### Dashboard
 
+Users can:
 
+- View job applications.
+- Add new job applications.
+- Search by company or role.
+- Filter applications by status.
+- Sort applications by date.
+- View application statistics.
+- Open detailed job information.
+- Delete job applications.
 
-### Instructions:
-1. Come up with your own design for the problem statement
-2. Use the design to guide your UI
-3. Use the agreed logic design tools to plan your functionality
-4. Follow your logic design tools to create the algorithm of the application
-5. Test your application
-6. Create a readme file for the application
-7. Push your updates to the remote repo
-8. Create a pull request to your main branch before the due date, with your mentor assigned
+### Job Status
 
-### Deliverables
-1. Design file 
-2. Step by step planning
-3. Pseudo code
-4. Design Implementation
-5. Algorithm
+Applications can have one of three statuses:
 
-### Evaluation Criteria:
-1. User-friendliness of the design:
-   <ul>
-     <li>Is the design intuitive</li>
-     <li>Does the design have a proper and understandable layout</li>
-     <li>Does the app flow from one function to another in an understandable and easy to follow manner</li>
-     <li>Does the app show notifications for processes occurring in the background</li>
-     <li>Does the app use colors that make it easy for users to see everything on the UI</li>
-     <li>Are elements easily accessible: colors, pressable height and width, font sizes</li>
-     <li>Screen reader friendliness/accessibility considered</li>
-     <li>Navigation segments are easily noticeable and accessible</li>
-   </ul>
-2. Aesthetics of the design
-   <ul>
-     <li>Does the design have colors that blend well together</li>
-     <li>Does the design maintain a consistent typography</li>
-     <li>Does the design have a consistent layout</li>
-     <li>Does the design have a consistent spacing on the same screen sizes</li>
-   </ul> 
-3. Page interactivity:
-    <ul>
-      <li>Does the mouse cursor change when hovering over clickable elements</li>
-      <li>Do clickable elements change color when hovered over</li>
-      <li>Do buttons change states after onclicks and while processing</li>
-      <li>Are loaders utilised while processing where relevant</li>
-    </ul>
-4. Proper utilisation of ReactTS features:
-    <ul>
-      <li>Did trainee create their own components</li>
-      <li>Were the components reused where appropriate</li>
-      <li>Was React state utilised properly</li>
-      <li>Were props sent to components and handled properly</li>
-      <li>Both representational and container components utilised</li>
-      <li>Were reused components customised for similar design elements instead of creating new elements</li>
-    </ul>
-5. React router features:
-    <ul>
-      <li>React libraries (React router recommended) utilised for navigation</li>
-      <li>Navlink used (in place of a tags) to route pages</li> 
-      <li>Queries utilised</li>
-      <li>Parameters utilised</li>
-      <li>Protected routes utilised, and utilised correctly</li>
-      <li>All page 404s handled correctly</li>
-    </ul>
-6. Responsiveness of the page: Is the page responsive to different web view sizes at different breakpoints, below is an example of common breakpoints:
-    <ul>
-      <li>320px</li>
-      <li>480px</li>
-      <li>768px</li>
-      <li>1024px</li>
-      <li>1200px</li>
-    </ul>
+- Applied
+- Interviewed
+- Rejected
+
+Each status has a different visual style.
+
+### Job Details
+
+Each application contains:
+
+- Company name
+- Job role
+- Application status
+- Date applied
+- Location
+- Address
+- Salary
+- Contact information
+- Job duties
+- Job requirements
+
+### Edit and Update
+
+Users can edit an existing job application and save the updated information.
+
+### Search, Filter and Sort
+
+The dashboard supports:
+
+- Search by company name.
+- Search by job role.
+- Filter by application status.
+- Sort from newest to oldest.
+- Sort from oldest to newest.
+
+Search, filtering and sorting options are reflected in the URL using query parameters.
+
+---
+
+## Technologies Used
+
+- React
+- TypeScript
+- React Router
+- Vite
+- JSON Server
+- HTML5
+- CSS3
+- Fetch API
+- Git
+- GitHub
+
+---
+
+## Project Structure
+
+```text
+job-tracker/
+│
+├── public/
+│
+├── src/
+│   ├── components/
+│   │   ├── EditJobForm.tsx
+│   │   ├── JobCard.tsx
+│   │   ├── JobForm.tsx
+│   │   ├── Navbar.tsx
+│   │   └── ProtectedRoute.tsx
+│   │
+│   ├── pages/
+│   │   ├── Landing.tsx
+│   │   ├── Login.tsx
+│   │   ├── Register.tsx
+│   │   ├── Home.tsx
+│   │   ├── JobDetails.tsx
+│   │   └── NotFound.tsx
+│   │
+│   ├── App.tsx
+│   ├── main.tsx
+│   └── index.css
+│
+├── db.json
+├── index.html
+├── package.json
+├── package-lock.json
+├── tsconfig.json
+├── vite.config.ts
+└── README.md
+```
+
+---
+
+## Application Routes
+
+| Route | Page | Purpose |
+|---|---|---|
+| `/` | Landing | Introduces JobTrack |
+| `/login` | Login | User login |
+| `/register` | Registration | Create an account |
+| `/home` | Dashboard | Manage job applications |
+| `/jobs/:id` | Job Details | View, edit and delete a job |
+| `*` | 404 | Handles unknown routes |
+
+---
+
+## URL Query Parameters
+
+### Search
+
+```text
+/home?search=developer
+```
+
+Searches company names and job roles.
+
+### Status
+
+```text
+/home?status=Interviewed
+```
+
+Displays applications with the selected status.
+
+### Sorting
+
+```text
+/home?sort=asc
+```
+
+Displays applications from oldest to newest.
+
+```text
+/home?sort=desc
+```
+
+Displays applications from newest to oldest.
+
+---
+
+## CRUD Operations
+
+JobTrack uses JSON Server as a local REST API.
+
+### Create
+
+New applications are added using:
+
+```text
+POST /jobs
+```
+
+### Read
+
+All applications are retrieved using:
+
+```text
+GET /jobs
+```
+
+Individual applications are retrieved using:
+
+```text
+GET /jobs/:id
+```
+
+### Update
+
+Existing applications are updated using:
+
+```text
+PUT /jobs/:id
+```
+
+### Delete
+
+Applications are removed using:
+
+```text
+DELETE /jobs/:id
+```
+
+---
+
+## JSON Server
+
+The project uses `db.json` as the local database.
+
+The JSON Server API runs on:
+
+```text
+http://localhost:3001
+```
+
+The jobs endpoint is:
+
+```text
+http://localhost:3001/jobs
+```
+
+---
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/davidmakomane/job-tracker.git
+```
+
+Move into the project:
+
+```bash
+cd job-tracker
+```
+
+Install the dependencies:
+
+```bash
+npm install
+```
+
+---
+
+## Running the Application
+
+The application requires two development servers.
+
+### 1. Start JSON Server
+
+```bash
+npm run server
+```
+
+JSON Server will run on:
+
+```text
+http://localhost:3001
+```
+
+### 2. Start React
+
+Open another terminal and run:
+
+```bash
+npm run dev
+```
+
+The React application will normally run on:
+
+```text
+http://localhost:5173
+```
+
+---
+
+## Responsive Design
+
+JobTrack is designed to work across different screen sizes:
+
+- 320px
+- 480px
+- 768px
+- 1024px
+- 1200px
+
+The layout adapts navigation, forms, dashboard cards and job cards for smaller screens.
+
+---
+
+## Component Structure
+
+### Navbar
+
+Handles application navigation and logout.
+
+### JobCard
+
+Displays an individual job application and provides actions for viewing and deleting the application.
+
+### JobForm
+
+Provides the form for creating a new job application.
+
+### EditJobForm
+
+Provides the form for updating an existing job application.
+
+### ProtectedRoute
+
+Protects dashboard and job-detail routes from unauthorised access.
+
+---
+
+## React Concepts Demonstrated
+
+This project demonstrates:
+
+- Functional components
+- TypeScript interfaces
+- Props
+- State
+- `useState`
+- `useEffect`
+- React Router
+- `BrowserRouter`
+- `Routes`
+- `Route`
+- `Link`
+- `NavLink`
+- `useNavigate`
+- `useParams`
+- `useSearchParams`
+- Protected routes
+- Forms
+- Form validation
+- Arrays and array methods
+- Objects
+- Fetch API
+- REST API requests
+- CRUD operations
+- Conditional rendering
+- Responsive CSS
+- Reusable components
+
+---
+
+## Design
+
+The application is based on the JobTrack wireframe created for the project.
+
+The original layout and navigation structure were retained while the visual theme was adapted to a green colour scheme.
+
+The main design goals are:
+
+- Simple navigation
+- Clear job status indicators
+- Easy access to job information
+- Responsive layouts
+- Clear action buttons
+- Consistent spacing and typography
+- User-friendly forms
+
+---
+
+## Future Improvements
+
+Planned improvements include:
+
+- Improved job details layout.
+- Enhanced edit/update interface.
+- More complete authentication.
+- User-specific job applications.
+- Improved validation and error handling.
+- Further responsive design improvements.
+- Additional UI polishing based on the original wireframe.
+- Interview reminders.
+- Application analytics.
+- Exporting job applications.
+- Cloud database integration.
+
+---
+
+## Author
+
+**Letsego David Makomane**
+
+React TypeScript Job Application Tracker
+
+GitHub:
+
+https://github.com/davidmakomane/job-tracker
