@@ -1,175 +1,104 @@
 Topic: ReactTS <br />
-Submission Date: 07 October 2025 <br />
-Time: 09:00 <br /> <br />
+Submission Date: 14 October 2026 <br />
+Time: 09:00 AM
 
-Please submit by pushing to your GitHub repository and submitting the submission form
 
-# Title: Task 3 - ReactTS Job Application Tracker 
+Please submit by pushing to your GitHub repository and creating a pull request to your mentor
+
+# Title: Task 4 - React Weather App
 
 ## Objective
-The objective of this task is to assess your understanding of React navigation, routing, URL queries and URL parameters, while testing your research skills when it comes to finding out ways to use new technology.
+It’s very rare for a whole application with a complete ecosystem to never communicate with other applications or servers to either send or request information. Most of these communications are done through APIs. In this task we focus on the consumption of data from third party servers which we then need to display in our own application. 
 
-<strong>This is the third official task for React based on Lesson 3.</strong>
- 
-<strong>Scenario</strong>: You are tasked with building a simple (MVP) of a web application that allows job applicants to track the number of jobs they’ve applied for, which will help them assess how many applications are successful, pending and rejected. (You can extend the app in your free time to add more functionality such as an actual database, as this is only a mock application).
+### This is the fourth official task for React based on Lesson 4.
 
+<strong>Scenario</strong>: You have to create a weather app that allows users to see their current location’s weather as well as any other location they search for. Their location and searched locations need to be persisted so they don’t have to keep searching the same location over and over.
 
 ## Requirements
 
-### Interface
-<ol>
-  <li>Create a user-friendly interface that is intuitive and easy to use</li>
-  <li>The interface should be responsive to different screens</li>
-  <li>Interface should make use of aesthetically pleasing color combinations</li>
-  <li>The interface should have a good layout that is easy to navigate</li>
-  <li>
-    Pages
-    <ul>
-      <li>Six Pages: Login, Registration, Home, landing, more details page (job page), 404 page</li>
-      <li>
-        Registration Page: New users can register with the following details:
-        <ul>
-          <li>Username</li>
-          <li>Password</li>
-        </ul>
-      </li>
-      <li>Login Page: Users can log in with their credentials.</li>
-      <li>Home Page: Display Jobs you applied for</li>
-      <li>Landing Page: Displays details about the purpose of the web application. You can be creative in terms of the other details to include
-      </li>
-      <li>
-        Job Page: This page can be used to display more details about the job and the company, such as address, contact details, duties, requirements, and any data applicants could find relevant to know about the company for interview purposes. You can use your creativity to see what details you want users to optionally add, bear in mind to include all necessary inputs.</li>
-      <li>404 page: Catch all non-existent paths</li>
-    </ul>
-  </li>
-</ol> 
+### User Interface
+1. Create a user-friendly interface that is intuitive and easy to use
+2. Allow users to view weather conditions such as temperature, humidity, wind speed in a set location
+3. The interface should have an appropriate page with appropriate elements to display the weather
 
-
-### Functionality: 
-1. Add Function: Users can add new jobs to the Job Application Tracker with the following details:
-   <ul>
-     <li>Company name</li>
-     <li>Role</li>
-     <li>Status: Applied, Interviewed, Rejected</li>
-     <li>Date applied</li>
-     <li>Job duties</li>
-   </ul>
-3. Delete Function: Users can delete existing Jobs from the job-application-tracker.
-4. Update Function: Users can edit existing jobs on the job-application tracker.
-5. Search Function: Users can search for items by company or role. The searched item should reflect on the URL bar
-6. Status colors: use colours to represent status (e.g., Red for Rejected, Yellow for Applied, Green for Interviewed).
-7. Filter function: Users can filter the jobs according to job status. The filter should reflect on the URL bar
-8. Sort function: Users can sort by date. Descending and ascending. This should reflect on the URL bar
-
-
-### General Requirements:
-1. Use the previous design (color scheme, design style, and properties) to formulate a new design for the application
-2. Implement CRUD (Create, Read, Update, Delete) operations to meet the functional requirements of the application
-3. Use <a target="blank" href="https://www.npmjs.com/package/json-server">JSON server</a> to store the link details
-4. Ensure the application is responsive and user-friendly
-5. Implement user authentication and authorization to protect user data
-6. Make sure to use queries and parameters in your application, allowing users to interact with the application from the URL bar while ensuring predictable results when the URL is updated.
-7. Use proper validation for input fields to prevent errors.
-8. Use protected routing in relevant routes/paths
-
-### Persistence
-1. Make use of JSON server to store the link details
- 
-### Concepts the task covers
-1. Arrays and array methods
-2. Objects and object method
-3. React components
-4. React state
-5. React props
-6. React hooks
-7. JSON object and its methods
-8. Web page responsiveness
-9. Form validation
-10. Design principles
-11. React router navigation
-12. Git principles
-    <ul>
-      <li>Git cloning</li>
-      <li>Git branching</li>
-      <li>Pull requests</li>
-    </ul>
-
-### Resources
-1. <a target="blank" href="https://www.npmjs.com/package/json-server">JSON server</a>
-2. <a target="blank" href="https://reactrouter.com/">React Router</a>
-3. <a target="blank" href="https://react.dev">React</a>
-4. <a target="blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Flexible_box_layout/Basic_concepts">Mozilla Developer: Flexbox basics</a>
-5. <a target="blank" href="https://css-tricks.com/complete-guide-css-grid-layout/">CSS Tricks: CSS Grid Layout</a>
-6. <a target="blank" href="https://www.w3schools.com/git/">W3Schools: Git</a>
-
-
-
-### Instructions:
-1. Come up with your own design for the problem statement
-2. Use the design to guide your UI
-3. Use the agreed logic design tools to plan your functionality
-4. Follow your logic design tools to create the algorithm of the application
-5. Test your application
-6. Create a readme file for the application
-7. Push your updates to the remote repo
-8. Create a pull request to your main branch before the due date, with your mentor assigned
-
-### Deliverables
-1. Design file 
-2. Step by step planning
-3. Pseudo code
-4. Design Implementation
-5. Algorithm
+### Features
+1. Real-time Weather Info:
+   - Display current weather conditions (temperature, humidity, wind speed, etc.).
+   - Provide hourly and daily weather forecasts.
+   - Allow users to select whether to view overall daily weather or hourly weather.
+2. Location-Based Forecasting:
+   - The app should automatically detect the user’s location, if granted permission by the user. 
+   - Allow users to search for a location
+   - Provide weather information for the user's current location
+   - Provide weather information for the searched location
+3. Weather Alerts:
+   - Send local notifications for severe weather alerts in the user's location.
+4. Multiple Locations:
+   - Allow users to save and switch between multiple locations for weather information.
+5. Customization:
+   - Allow users to customise the app's theme
+   - Allow users to customise the display units (e.g., Celsius vs. Fahrenheit).
+6. Offline Access:
+   - Provide cached weather data for offline access.
+7. Performance:
+   - Optimise the app for fast loading and smooth performance.
+8. Privacy & Security:
+   - Protect user data and privacy in accordance with relevant laws and regulations.
 
 ### Evaluation Criteria:
-1. User-friendliness of the design:
-   <ul>
-     <li>Is the design intuitive</li>
-     <li>Does the design have a proper and understandable layout</li>
-     <li>Does the app flow from one function to another in an understandable and easy to follow manner</li>
-     <li>Does the app show notifications for processes occurring in the background</li>
-     <li>Does the app use colors that make it easy for users to see everything on the UI</li>
-     <li>Are elements easily accessible: colors, pressable height and width, font sizes</li>
-     <li>Screen reader friendliness/accessibility considered</li>
-     <li>Navigation segments are easily noticeable and accessible</li>
-   </ul>
-2. Aesthetics of the design
-   <ul>
-     <li>Does the design have colors that blend well together</li>
-     <li>Does the design maintain a consistent typography</li>
-     <li>Does the design have a consistent layout</li>
-     <li>Does the design have a consistent spacing on the same screen sizes</li>
-   </ul> 
-3. Page interactivity:
-    <ul>
-      <li>Does the mouse cursor change when hovering over clickable elements</li>
-      <li>Do clickable elements change color when hovered over</li>
-      <li>Do buttons change states after onclicks and while processing</li>
-      <li>Are loaders utilised while processing where relevant</li>
-    </ul>
-4. Proper utilisation of ReactTS features:
-    <ul>
-      <li>Did trainee create their own components</li>
-      <li>Were the components reused where appropriate</li>
-      <li>Was React state utilised properly</li>
-      <li>Were props sent to components and handled properly</li>
-      <li>Both representational and container components utilised</li>
-      <li>Were reused components customised for similar design elements instead of creating new elements</li>
-    </ul>
-5. React router features:
-    <ul>
-      <li>React libraries (React router recommended) utilised for navigation</li>
-      <li>Navlink used (in place of a tags) to route pages</li> 
-      <li>Queries utilised</li>
-      <li>Parameters utilised</li>
-      <li>Protected routes utilised, and utilised correctly</li>
-      <li>All page 404s handled correctly</li>
-    </ul>
-6. Responsiveness of the page: Is the page responsive to different web view sizes at different breakpoints, below is an example of common breakpoints:
-    <ul>
-      <li>320px</li>
-      <li>480px</li>
-      <li>768px</li>
-      <li>1024px</li>
-      <li>1200px</li>
-    </ul>
+1. User-friendliness and visual appeal of the design
+    - Is the design intuitive
+    - Does the design have a proper and understandable layout
+    - Does the app flow from one function to another in an understandable and easy to follow manner
+    - Does the app show notifications for processes occurring in the background and after an operation
+    - Does the design have colors that blend well together
+    - Does the design maintain a consistent typography
+2. Functionality
+    - App requests to read user’s location
+    - Does the app allow user to search for a location
+    - Does the app show the weather details such as:
+        - Temperature
+        - Humidity
+        - Wind speed
+    - Does the app allow user to change the theme
+    - Does the app allow the user to change the display units?
+    - Does the app allow the user to see hourly weather
+    - Does the app allow the user to see daily weather
+3. Page interactivity
+    - The mouse cursor changes when hovering over clickable elements
+    - Clickable elements change color when hovered over to indicate interactivity
+    - It is easy to navigate through the application’s different pages
+4. Utilisation of ReactTS features
+    - Did trainee create their own components
+    - Were the components reused where appropriate
+    - Was React state utilised properly
+    - Were props sent and handled properly
+    - Components are customised through props for similar design elements instead of creating new elements
+    - Code quality and code organisation
+    - Variable names follow the standard and recommended naming approach, camelCasing
+    - Variable names are self-explanatory
+    - Logic is broken into smaller code blocks (functions) making it more readable
+    - Comments utilised where necessary
+5. Responsiveness of the page
+    - Is the page responsive to different web view sizes at these common breakpoints:
+       - 320px
+       - 480px
+       - 768px
+       - 1024px
+       - 1200px
+
+### Instructions:
+1. Create a React project to address this problem or use case. You are expected to come up with your own design.
+2. Make use of reusable components wherever applicable
+3. Make it responsive to different screen sizes.
+4. The main point of data storage will be local storage (localStorage directly available from JS), which will allow you to add, update and delete from it.
+5. You are allowed to use libraries in this project as long as they do not get in the way of you addressing the requirements of the app. Eg Tailwind for CSS
+6. You are to submit in the form of links, either a github link or live link of the portal. Sending code files will not count as a submission.
+7. It is recommended that everyone uses react-router-dom version 6 for the task so it is easier for everyone to help one another in the case of bugs/errors etc. npm automatically will select this version if you do not specify the version.
+
+### Deliverables
+1. Design
+2. Step by step planning
+3. Pseudocode
+4. UI implementation
+5. Algorithm
