@@ -1,0 +1,3 @@
+export type Place = { id: string; name: string; country: string; latitude: number; longitude: number; timezone: string };
+export type Units = 'celsius' | 'fahrenheit';
+export type WeatherData = { current: { temperature_2m: number; apparent_temperature: number; relative_humidity_2m: number; wind_speed_10m: number; weather_code: number; is_day: number }; hourly: { time: string[]; temperature_2m: number[]; precipitation_probability: number[]; weather_code: number[] }; daily: { time: string[]; temperature_2m_max: number[]; temperature_2m_min: number[]; weather_code: number[]; precipitation_probability_max: number[] }; fetchedAt: number };
