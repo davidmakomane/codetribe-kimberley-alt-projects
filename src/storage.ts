@@ -1,0 +1,10 @@
+import type { Place, Units, WeatherData } from './types';
+const read = <T,>(key: string, fallback: T): T => { try { const value = localStorage.getItem(key); return value ? JSON.parse(value) as T : fallback; } catch { return fallback; } };
+export const loadPlaces = () => read<Place[]>('atmos-places', []);
+export const savePlaces = (places: Place[]) => localStorage.setItem('atmos-places', JSON.stringify(places));
+export const loadUnits = (): Units => read<Units>('atmos-units', 'celsius');
+export const saveUnits = (units: Units) => localStorage.setItem('atmos-units', JSON.stringify(units));
+export const loadTheme = () => read<'dark' | 'light'>('atmos-theme', 'dark');
+export const saveTheme = (theme: 'dark' | 'light') => localStorage.setItem('atmos-theme', JSON.stringify(theme));
+export const loadWeather = (id: string): WeatherData | null => read<Record<string, WeatherData>>('atmos-cache', {})[id] ?? null;
+export const saveWeather = (id: string, weather: WeatherData) => { const cache = read<Record<string, WeatherData>>('atmos-cache', {}); cache[id] = weather; localStorage.setItem('atmos-cache', JSON.stringify(cache)); };
