@@ -1,6 +1,6 @@
 
 import { useEffect, useMemo, useState } from "react";
-import { Link, useNavigate, useSearchParams } from "react-router-dom";
+import { Link, useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import {
   Search,
   Plus,
@@ -35,6 +35,7 @@ const categories = [
 function Home() {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
+  const location = useLocation();
 
   const currentUser = useAppSelector((state) => state.auth.user);
   const lists = useAppSelector((state) => state.shoppingLists.lists);
@@ -243,7 +244,7 @@ function Home() {
 
   return (
     <div className="basketly-layout">
-      <AppSidebar active="lists" onLogout={handleLogout} />
+      <AppSidebar active={location.hash === "#my-lists" ? "lists" : "home"} onLogout={handleLogout} />
 
       <main className="basketly-main">
         <header className="basketly-toolbar">
