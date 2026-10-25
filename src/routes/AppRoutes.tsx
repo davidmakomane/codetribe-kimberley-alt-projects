@@ -11,6 +11,7 @@ import { useAppSelector } from "../app/hooks";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Home from "../pages/Home";
+import MyLists from "../pages/MyLists";
 import Profile from "../pages/Profile";
 import ShoppingListDetails from "../pages/ShoppingListDetails";
 
@@ -40,6 +41,7 @@ function AppRoutes() {
 
         <Route element={<ProtectedRoute />}>
           <Route path="/home" element={<Home />} />
+          <Route path="/lists" element={<MyLists />} />
           <Route path="/profile" element={<Profile />} />
           <Route
             path="/lists/:listId"

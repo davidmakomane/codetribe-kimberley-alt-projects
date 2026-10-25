@@ -317,7 +317,7 @@ function ShoppingListDetails() {
       <AppSidebar active="lists" onLogout={user ? handleLogout : undefined} />
 
       <main className="basketly-main">
-        <Link to="/home" className="basketly-back-link">
+        <Link to="/lists" className="basketly-back-link">
           <ArrowLeft size={17} />
           Back to lists
         </Link>
