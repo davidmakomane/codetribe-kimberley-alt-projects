@@ -1,142 +1,46 @@
-# Shopping List App
+# Task 5 - Shopping List App
 
-## 1. Project Overview
+A responsive React and TypeScript shopping list app using Redux Toolkit, React Router, and JSON Server. Users can register and log in, manage their profile and password, create categorized shopping lists, manage list items, search and sort through URL parameters, and share read-only links.
 
-The Shopping List App is a web application built with React and TypeScript. It will help users create and manage shopping lists, add and update shopping items, search for items, and sort shopping lists.
+## Features
 
-The application will use Redux Toolkit for state management, React Router for navigation, Lucide React for icons, and JSON Server as a development API for storing and managing data.
+- Registration and login with salted PBKDF2 password hashing.
+- Guest-only login and registration routes, protected account pages, and session persistence.
+- Profile updates and password changes.
+- Shopping list and item create, read, update, and delete operations.
+- Item quantities, categories, notes, optional image URLs, and purchased status.
+- Search, category filtering, and sorting by name/category/date; query parameters are reflected in the URL and update the view when edited.
+- Read-only list sharing links.
+- Responsive layout for small and large screens, accessible labels and keyboard focus states.
 
-## 2. Project Objectives
+## Run locally
 
-- Allow users to register, log in, and log out.
-- Create, view, edit, and delete shopping lists.
-- Add, update, and remove items from shopping lists.
-- Search for shopping lists and items.
-- Sort items and lists using relevant options.
-- Manage user profile information.
-- Build a responsive interface for desktop, tablet, and mobile screens.
-- Organise the application using reusable React components and a clear folder structure.
+Use Node.js 20.19+ or 22.12+.
 
-## 3. Technologies
-
-- **React** — builds the user interface.
-- **TypeScript** — adds type checking to the code.
-- **Vite** — provides the development environment and build tools.
-- **Redux Toolkit** — manages application state.
-- **React Redux** — connects React components to Redux.
-- **React Router** — handles navigation between pages.
-- **Lucide React** — provides interface icons.
-- **JSON Server** — provides a mock REST API for development.
-- **Git and GitHub** — track changes and manage the project repository.
-
-## 4. Step-by-Step Development Plan
-
-### Step 1: Project Setup
-- Create the React and TypeScript project using Vite.
-- Install the required dependencies.
-- Confirm that the application runs locally.
-- Save the initial setup on the GitHub branch.
-
-### Step 2: Design and Screen Layouts
-- Choose the application's colours, typography, spacing, and overall style.
-- Design the Login and Registration screens.
-- Design the Home/Dashboard screen.
-- Design the Shopping Lists and Shopping List Details screens.
-- Design the Profile screen.
-- Plan the navigation and responsive layouts.
-
-### Step 3: Create the Source-File Structure
-- Organise the project into pages, reusable components, features, services, routes, types, and application configuration.
-- Create a consistent structure that makes the code easier to understand and maintain.
-
-### Step 4: Set Up Data and State Management
-- Create the development database using `db.json`.
-- Configure JSON Server and its API endpoints.
-- Set up the Redux store.
-- Create Redux slices for authentication and shopping-list data.
-- Connect the application to the API.
-
-### Step 5: Implement Authentication
-- Build the Registration and Login forms.
-- Validate user input.
-- Implement the development authentication flow.
-- Add logout functionality.
-- Protect pages that require authentication.
-
-### Step 6: Implement Shopping List Features
-- Create new shopping lists.
-- View existing shopping lists.
-- Edit list details.
-- Delete shopping lists.
-- Add items with names, quantities, categories, and optional notes.
-- Update and delete shopping items.
-
-### Step 7: Implement Search and Sorting
-- Search for shopping lists and items by name.
-- Filter items by category.
-- Sort results using relevant criteria, such as name or date.
-- Display appropriate messages when no results are found.
-
-### Step 8: Implement Profile and Responsive Design
-- Display and update profile information.
-- Make the interface responsive on desktop, tablet, and mobile screens.
-- Improve accessibility, form feedback, loading states, and error messages.
-
-### Step 9: Test the Application
-- Test registration, login, and logout.
-- Test shopping-list and item operations.
-- Test searching, filtering, and sorting.
-- Test navigation and protected pages.
-- Check form validation and error handling.
-- Test different screen sizes and fix identified problems.
-
-### Step 10: Documentation and Submission
-- Update this README as the project develops.
-- Explain how to install and run the application.
-- Document the system design and key features.
-- Review the source code and test the production build.
-- Commit and push the completed changes to GitHub.
-- Prepare the required deliverables and submit the project according to the assignment instructions.
-
-## 5. Current Position
-
-### Completed
-- [x] Created the Vite React + TypeScript project.
-- [x] Installed Redux Toolkit.
-- [x] Installed React Redux.
-- [x] Installed React Router.
-- [x] Installed Lucide React.
-- [x] Installed JSON Server.
-
-### In Progress
-- [ ] Finalise the design and screen layouts.
-- [ ] Create the complete source-file structure.
-
-### Not Started
-- [ ] Implement the application features.
-- [ ] Test the application and fix errors.
-- [ ] Complete the documentation and submit through GitHub.
-
-## 6. Development Approach
-
-The application will be developed in stages. Each stage will be planned, implemented, and tested before moving to the next stage. Git commits will be used to track progress throughout development.
-
-**Current stage:** Project setup is complete. The next stage is to finalise the design and screen layouts before building the application's features.
-
-## 7. Running the Project Locally
-
-Install dependencies:
-
-```bash
+```sh
 npm install
+npm run server
 ```
 
-Start the development server:
+In a second terminal, from the project root:
 
-```bash
+```sh
 npm run dev
 ```
 
-The terminal will display the local URL where the application can be opened.
+Open the Vite URL shown in the terminal and register an account. The server command creates an empty local `db.json` from `db.example.json` when needed. The local database is git-ignored so personal records are not committed. The app uses `http://localhost:3001` by default; set `VITE_API_URL` in a local `.env` file to point to another API base URL.
 
-*Note: JSON Server and authentication-related functionality will be configured as development progresses. A mock API is not a secure production authentication backend.*
+## Check the project
+
+```sh
+npm run build
+npm run lint
+```
+
+## Project planning and algorithms
+
+See [docs/TASK5_PLAN.md](docs/TASK5_PLAN.md) for the design summary, step-by-step plan, pseudocode, and core algorithms.
+
+## Data and security notes
+
+Passwords are salted and hashed with PBKDF2; they are not decrypted at login. JSON Server is a local development API, not a production backend. It does not enforce authentication or ownership against direct API requests. Browser route checks and read-only share links are application behavior, not server security. A production release needs a server that authenticates users, enforces record ownership and share permissions, validates inputs, and protects personal data. Do not deploy this mock API or commit personal records in `db.json`.

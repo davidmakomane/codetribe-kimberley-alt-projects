@@ -2,6 +2,8 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { loginUser } from "../services/authService";
+import { useAppDispatch } from "../app/hooks";
+import { setUser } from "../features/auth/authSlice";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -9,6 +11,7 @@ function Login() {
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -17,17 +20,19 @@ function Login() {
 
     try {
       const user = await loginUser(email, password);
+      const safeUser = {
+        id: user.id,
+        name: user.name,
+        surname: user.surname,
+        email: user.email,
+        cellNumber: user.cellNumber,
+      };
+      dispatch(setUser(safeUser));
 
       // Temporary session for this learning project.
       sessionStorage.setItem(
         "currentUser",
-        JSON.stringify({
-          id: user.id,
-          name: user.name,
-          surname: user.surname,
-          email: user.email,
-          cellNumber: user.cellNumber,
-        })
+        JSON.stringify(safeUser)
       );
 
       navigate("/home");
