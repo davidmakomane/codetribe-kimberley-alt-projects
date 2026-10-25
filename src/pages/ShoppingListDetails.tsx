@@ -7,6 +7,7 @@ import {
   ImagePlus,
   Plus,
   Search,
+  Share2,
   ShoppingCart,
   Trash2,
   X,
@@ -22,6 +23,7 @@ import {
   updateItem,
   deleteItem,
 } from "../features/items/itemsSlice";
+import { updateList } from "../features/shoppingLists/shoppingListsSlice";
 import type { ShoppingList, ShoppingItem } from "../types";
 import { apiUrl } from "../services/api";
 import AppSidebar from "../components/AppSidebar";
@@ -284,6 +286,28 @@ function ShoppingListDetails() {
     }
   }
 
+  async function handleShareList() {
+    if (!canEdit || !list) return;
+    try {
+      const token = list.shareToken || crypto.randomUUID();
+      if (!list.shareToken) {
+        const updated = await dispatch(updateList({
+          id: list.id,
+          name: list.name,
+          description: list.description,
+          category: list.category || "Other",
+          shareToken: token,
+        })).unwrap();
+        setList(updated);
+      }
+      const shareUrl = `${window.location.origin}/shared/${encodeURIComponent(list.id)}?token=${encodeURIComponent(token)}`;
+      await navigator.clipboard.writeText(shareUrl);
+      setMessage("Read-only sharing link copied to your clipboard.");
+    } catch {
+      setMessage("Could not create or copy the sharing link.");
+    }
+  }
+
   function handleLogout() {
     sessionStorage.removeItem("currentUser");
     dispatch(clearUser());
@@ -398,6 +422,7 @@ function ShoppingListDetails() {
         <div className="basketly-items-heading">
           <h2>Items</h2>
 
+          {canEdit && <button className="basketly-cancel-button" type="button" onClick={() => void handleShareList()}><Share2 size={16} />Share list</button>}
           {canEdit && <button
             className="basketly-primary-button"
             onClick={() => {
